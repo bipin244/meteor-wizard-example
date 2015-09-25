@@ -1,0 +1,50 @@
+.box .header-tabs .nav-tabs > li {
+		float: left;
+	}
+#myTab{
+	width: auto; 
+	overflow: hidden; 
+	margin-left: -4px; 
+	margin-top: 3px;
+}
+.margin-7{
+	text-transform: capitalize;
+	font-weight:  900;
+	font-size: 138%;
+}
+.margin-7:after {
+    content: "\00a0";
+}
+
+.pull-left select {
+	font-size: 15px;
+    height: 31px;
+	
+    cursor:pointer;
+}
+
+.pull-left select:focus {
+    outline: none;
+}
+.header{
+	
+}
+.scroll {
+    height:200px;
+	overflow: auto;
+    
+}
+/**
+ * cstm_row_at_line,cstm_div_at_line_float,first_child_div_custom_line it class used for display all filter in report to design filter
+ * **/
+.cstm_row_at_line{
+	margin-left:10px;
+}
+.cstm_div_at_line_float{
+	float:left;
+	margin-left:10px;
+}
+.first_child_div_custom_line{
+	float:left;
+}
+

@@ -1,0 +1,53 @@
+<body>
+	{{>basicWizard}}
+</body>
+<template name="basicWizard">
+	<input type="button" class="btn btn-lg btn-primary open-insert-modal" value="Insert Value" data-backdrop="false">
+	<div id="insertModal" class="modal fade" style="margin-left: 25%;margin-top: 10%;width: 50%;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">InsertData</h4>
+			</div>
+			<div class="modal-body">
+				{{> wizard id="orderWizard" clearOnDestroy=true  type="insert" steps=steps doc=this buttonClasses='btn btn-success'}}
+				
+			</div>
+		</div>
+	</div>
+	<div id="updateModal" class="modal fade" style="margin-left: 25%;margin-top: 10%;width: 50%;background: white none repeat scroll 0 0;">
+		<div class="">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Update Data</h4>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+		</div>
+	</div>
+<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>UserName</th>
+				<th>Password</th>
+				<th>Color</th>
+				<th>Email</th>
+				<th>Number</th>
+				<th>Update</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each books}}
+				<tr>
+					<td>{{username}}</td>
+					<td>{{password}}</td>
+					<td>{{color}}</td>
+					<td>{{email}}</td>
+					<td>{{number}}</td>
+					<td><input type="button" class="btn btn-primary open-update-modal" value="Update" name="update"></td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>
