@@ -1,0 +1,83 @@
+.wizard-nav{
+	text-align: center;
+}/*
+.steps {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps* /
+	counter-reset: step;
+}
+.steps ol li {
+	list-style-type: none;
+	color: red;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 50%;
+	float: left;
+	position: relative;
+	text-align: center;
+}
+.steps ol li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors* /
+.steps ol li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers* /
+}
+.steps ol li:first-child:after {
+	/*connector not needed before the first step * /
+	content: none; 
+}
+/*marking active/completed steps green* /
+/*The number of the step and the connector before it = green* /
+.steps ol li.active:before,  .steps ol li.active:after{
+	background: #27AE60;
+	color: white;
+} */
+.steps{
+	padding-bottom: 10px;
+}
+.steps ol{
+	text-align:center;
+	background-color: #E4EAE4;
+	border-radius: 4px 4px 0 0;
+    box-shadow: none !important;
+    margin-bottom: 14px;
+    display: table-row;
+}
+.steps ol li{
+	display: table-cell;
+    width: 1%;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+.steps ol li.active{
+      
+	background: #f0f0f0 none repeat scroll 0 0;
+	color: lightcyan;
+	background-color: #898987;
+	height: 30px;
+    padding-top: 5px;
+}
+}
+.steps ol li.active :: after{
+      
+	transform: translateY(-50%) translateX(50%) rotate(-45deg);
+    width: 1.5em;
+}

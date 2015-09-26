@@ -1,0 +1,109 @@
+<body>
+	{{>basicWizard}}
+</body>
+<template name="basicWizard">
+	<input type="button" class="btn btn-lg btn-primary open-insert-modal" value="Insert Value" data-backdrop="false">
+	<div id="insertModal" class="modal fade" style="margin-left: 25%;margin-top: 10%;width: 50%;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">InsertData</h4>
+			</div>
+			<div class="modal-body">
+				{{> wizard id="orderWizard" collection="Orders" clearOnDestroy=true  type="insert" steps=steps doc=this buttonClasses='btn btn-success'}}
+				{{>wizardButtons2}}
+			</div>
+		</div>
+	</div>
+	<div id="DeleteModal" class="modal fade" style="margin-left: 25%;margin-top: 10%;width: 50%;">
+		<div class="modal-content">
+			<div class="modal-header ">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title customTitle"></h4>
+			</div>
+			<div class="modal-body customBody">
+
+			</div>
+		</div>
+	</div>
+	<div id="updateModal" class="modal fade" style="margin-left: 25%;margin-top: 10%;width: 50%;background: white none repeat scroll 0 0;">
+		<div class="">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Update Data</h4>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+		</div>
+	</div>
+<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>UserName</th>
+				<th>Password</th>
+				<th>Color</th>
+				<th>Email</th>
+				<th>Number</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each books}}
+				<tr>
+					<td>{{username}}</td>
+					<td>{{password}}</td>
+					<td>{{color}}</td>
+					<td>{{email}}</td>
+					<td>{{number}}</td>
+					<td><input type="button" class="btn btn-primary open-update-modal" value="Update" name="update"></td>
+					<td>
+						{{> quickRemoveButton collection='Orders' _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-sm btn-danger"}}
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+<template name="information">
+	<div class="wizard-step">
+		{{#if destroyForm}}
+		{{else}}
+			{{#autoForm id='information-form' collection="Orders" doc=step.data schema=step.schema}}
+				{{#each afFieldNames}}
+					{{> afQuickField name=this.name options=afOptionsFromSchema}}
+				{{/each}}
+				 {{> wizardButtons2}}
+			{{/autoForm}}
+		{{/if}}
+	</div>
+</template>
+<template name="Confirm">
+	<div class="wizard-step">
+		{{#if destroyForm}}
+		{{else}}
+			{{#autoForm id='confirm-form' doc=step.data collection="Orders" schema=step.schema}}
+				{{#each afFieldNames}}
+					{{> afQuickField name=this.name options=afOptionsFromSchema}}
+				{{/each}}
+				 {{> wizardButtons2}}
+			{{/autoForm}}
+		{{/if}}
+	</div>
+</template>
+
+<template name="wizardButtons2">
+	{{#with wizard}}
+		<nav class="wizard-nav">
+			{{#if showBackButton}}
+				<button type="button" class="wizard-back-button {{buttonClasses}}">{{backButton}}</button>
+			{{/if}}
+			{{#if isLastStep}}
+				<button type="submit" class="wizard-submit-button {{buttonClasses}}">{{confirmButton}}</button>
+			{{else}}
+				<button type="submit" class="wizard-next-button {{buttonClasses}}">{{nextButton}}</button>
+			{{/if}}
+		</nav>
+	{{/with}}
+</template>
