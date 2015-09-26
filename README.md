@@ -1,5 +1,5 @@
 # meteor-wizard-example
 
-# Temporary Running application
+## Temporary Running application
 
-[http://autoformwizard.meteor.com/]
+http://autoformwizard.meteor.com/
