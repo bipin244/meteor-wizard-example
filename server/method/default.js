@@ -10,13 +10,8 @@ Orders.allow({
 	}
 });
 Meteor.methods({
-	accountsIsUsernameAvailable: function(username) {
-		console.log(username);
-		if(Orders.findOne({username:username})){
-			return true;
-		}else{
-			return false;
-		}
+	accountsIsUsernameAvailable: function() {
+		
 	}
 });
 

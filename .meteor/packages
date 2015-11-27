@@ -12,3 +12,6 @@ forwarder:autoform-wizard
 underscore
 twbs:bootstrap
 reactive-var
+reactive-dict
+meteorhacks:kadira
+gildaspk:autoform-materialize
