@@ -80,7 +80,6 @@ Template.information.onRendered(function() {
 	})
 });
 Template.basicWizard.onRendered(function() {
-	Meteor.call('accountsIsUsernameAvailable');
 	Meteor.subscribe('userdata');
 });
 Template.basicWizard.helpers({
